@@ -2,16 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema({
-  title: {
+  category: [
+    "Legs", "Push", "Pull"
+  ],
+  name: {
     type: String,
     required: true,
   },
   muscle: {
     type: String,
   },
-  type: [
-    "Legs", "Push", "Pull"
-  ],
+  equipment: {
+    type: String
+  },
   sets: {
     type: Number,
     required: true,
@@ -20,13 +23,16 @@ const exerciseSchema = new Schema({
     type: Number,
     required: true,
   },
+  imageUrl: {
+    type: String,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  createdAt: {
+  date: {
     type: Date,
-    default: Date.now,
+    required: true,
   },
 });
 

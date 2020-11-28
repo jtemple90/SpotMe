@@ -2,22 +2,25 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
-  title: { 
+  title: {
     type: String,
-    required: true
+    required: true,
   },
-  body: { 
+  body: {
     type: String,
-    required: true
+    required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: "User",
+  },
+  imageUrl: {
+    type: String,
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model("Exercise", articleSchema);
+module.exports = mongoose.model("Article", articleSchema);

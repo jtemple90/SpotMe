@@ -1,0 +1,297 @@
+{
+  "exercises":  [{
+        "category": "Push",
+        "name": "Barbell Bench Press",
+        "muscle": "Chest",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Incline Barbell Bench Press",
+        "muscle": "Chest",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Decline Barbell Bench Press",
+        "muscle": "Chest",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "OverHead Press",
+        "muscle": "Shoulders",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Dumbbell Press",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Decline Dumbbell Press",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Incline Dumbell Press",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Dumbbell Flye",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Incline Dumbbell Flye",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Dumbbell Pullover",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Dumbbell Bench Press",
+        "muscle": "Chest",
+        "equipment": "Dumbbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Cable Bent Over Row",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Cable Chest Flye",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Cable Chest Press",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Cable Bent Over Row",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Cable Crossover",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "High Cable Flye",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Low Cable Flye",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Machine Chest Flye",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Machine Chest Press",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Parralel Dip Bar",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Push Up",
+        "muscle": "Chest",
+        "equipment": "Bodyweight",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Machine Chest Flye",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Machine Chest Press",
+        "muscle": "Chest",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Shoulder Press",
+        "muscle": "Shoulder",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Shoulder Press",
+        "muscle": "Shoulder",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Military Press",
+        "muscle": "Shoulder",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "dumbbell Shoulder Press",
+        "muscle": "Shoulder",
+        "equipment": "Dumbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Barbell Split Jerk",
+        "muscle": "Shoulder",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Overhead triceps Press",
+        "muscle": "Triceps",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Overhead Bar Press",
+        "muscle": "Triceps",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Overhead triceps Press",
+        "muscle": "Triceps",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Cable Shoulder Press",
+        "muscle": "Shoulder",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Machine Shoulder Press",
+        "muscle": "Shoulder",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Tricep Extension",
+        "muscle": "Triceps",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Overhead Tricep Extension",
+        "muscle": "Triceps",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Tricep Pushdown",
+        "muscle": "Triceps",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Tricep Extension",
+        "muscle": "Triceps",
+        "equipment": "Machine",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Pull",
+        "name": "Pull Up-Regular Grib",
+        "muscle": "Lats",
+        "equipment": "Pull Up Bar",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Legs",
+        "name": "Barbell Squat",
+        "muscle": "Quads",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Barbell Bench Press",
+        "muscle": "Chest",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    },
+    {
+        "category": "Push",
+        "name": "Barbell Bench Press",
+        "muscle": "Chest",
+        "equipment": "Barbell",
+        "imageUrl": "" 
+    }
+  ]
+}

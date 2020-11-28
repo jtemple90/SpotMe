@@ -2,12 +2,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  googleId: {
+  username: {
     type: String,
     required: true,
+    unique: true,
   },
   email: {
     type: String,
+    required: true,
+    unique: true,
   },
   firstName: {
     type: String,
@@ -18,13 +21,24 @@ const userSchema = new Schema({
     required: true,
   },
   image: {
-    type: Image
+    type: String,
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
-
+  articles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Article",
+    },
+  ],
+  exercises: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Exercise",
+    },
+  ],
 });
 
 module.exports = mongoose.model('User', userSchema);
