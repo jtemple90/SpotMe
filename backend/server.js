@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require('cors');
-const mongoose = require('mongoose');
 
 const routes = require('./routes');
 
@@ -16,20 +15,10 @@ const corsOptions ={
 app.use(express.json());
 app.use(cors(corsOptions));
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true
-});
 
-app.use('/api/v1/exercises', routes.exercises)
-
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log(`Mongo Db Connection established`)
-})
-
+app.use('/api/v1/exercises', routes.exercises);
+// app.use('/exercises', routes.exercises);
+app.use('/users', routes.users);
 
 
 app.listen(PORT, () => console.log(`Server is running of Port ${PORT}`));

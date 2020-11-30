@@ -17,11 +17,9 @@ const exerciseSchema = new Schema({
   },
   sets: {
     type: Number,
-    required: true,
   },
   reps: {
     type: Number,
-    required: true,
   },
   imageUrl: {
     type: String,
@@ -29,11 +27,9 @@ const exerciseSchema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-  },
-  date: {
-    type: Date,
-    required: true,
-  },
+  }
 });
 
-module.exports = mongoose.model("Exercise", exerciseSchema);
+const Exercise = mongoose.model("Exercise", exerciseSchema);
+
+module.exports = Exercise;

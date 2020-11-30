@@ -1,5 +1,5 @@
-const router = require("router");
-const ctrl = require("./controllers");
+const router = require("express").Router();
+const ctrl = require("../controllers");
 
 // ROUTES
 router.get("/", ctrl.articles.index);

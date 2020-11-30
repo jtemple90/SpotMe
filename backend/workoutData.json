@@ -1,5 +1,6 @@
 {
-  "exercises":  [{
+  "exercises":  [
+      {
         "category": "Push",
         "name": "Barbell Bench Press",
         "muscle": "Chest",
