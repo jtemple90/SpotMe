@@ -21,17 +21,17 @@ app.use(express.json());
 
 
 
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, {
-  useUnifiedTopology: true, 
-  useNewUrlParser: true,
-  useCreationIndex: true,
-});
-const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("MongoDb database connection established successfully");
-});
+// mongoose.connect(uri, {
+//   useUnifiedTopology: true, 
+//   useNewUrlParser: true,
+//   useCreationIndex: true,
+// });
+// const connection = mongoose.connection;
+// connection.once("open", () => {
+//   console.log("MongoDb database connection established successfully");
+// });
 
 
 app.use('/api/v1/exercises', routes.exercises);

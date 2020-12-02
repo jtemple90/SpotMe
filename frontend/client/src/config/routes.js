@@ -12,7 +12,7 @@ export default (
     <Route path="/workouts" exact component={(WorkoutsPage)} />
     {/* <Route path="/create" exact component={CreateWorkout} /> */}
     <Route path="/user/:id" exact component={(DashboardPage)} />
-    {/* <Route path="/login" component={(Login, NavBar, Footer)} /> */}
-    {/* <Route path="/register" component={(Register, NavBar, Footer)} /> */}
+    {/* <Route path="/login" component={(Login)} /> */}
+    {/* <Route path="/register" component={(Register)} /> */}
   </Router>
 );

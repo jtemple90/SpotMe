@@ -1,6 +1,6 @@
-const passport = require("passport");
-const passportConfig = require("../passport");
-const JWT = require("jsonwebtoken");
+// const passport = require("passport");
+// const passportConfig = require("../passport");
+// const JWT = require("jsonwebtoken");
 const db = require("../models");
 
 const index = (req, res) => {
@@ -11,19 +11,19 @@ const index = (req, res) => {
     }).catch(err => res.json(err, "Unable to get user data"))
 };
 const create = (req, res) => {
-  const {username, password, email} = req.body
-  db.User.create({username}, (err, savedUser) => {
+  db.User.create(req.body, (err, savedUser) => {
     res.json({ user: savedUser })
   }).catch((err) => {
      console.log("Error in user.create:", err);
      res.json({ Error: "Unable to get data" });
   })
-  const newUser = new User({ username, password, email });
+  const username = req.body.username
+  const newUser = new User(req.body);
     newUser.save(err => {
       if (err) console.log(err)
 
       else {
-        console.log('Account Succesfully created')
+        console.log('Account Successfully created')
       }
     })
 };

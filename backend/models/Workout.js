@@ -17,10 +17,10 @@ const workoutSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
   exercises: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Exercise",
