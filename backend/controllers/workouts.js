@@ -22,6 +22,7 @@ const create = (req, res) => {
 
 const show = (req, res) => {
   db.Workout.findById(req.params.id)
+  .populate({ path: "exercises" })
     .then((foundWorkout) => {
       res.json({ workout: foundWorkout })
     }).catch((err) => {
@@ -45,7 +46,11 @@ const update = (req, res) => {
 const destroy = (req, res) => {
   db.Workout.findByIdAndDelete(req.params.id, (err, deletedWorkout) => {
     if(err) console.log('Err in destroy workout:', err)
-
+    db.Exercise.remove({
+      _id: {
+        $in: deletedWorkout.exercises,
+      },
+    });
     res.json({ workout: deletedWorkout })
   })
 }

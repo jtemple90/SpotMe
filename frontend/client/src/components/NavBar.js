@@ -1,47 +1,46 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
-import AuthService from '../Context/AuthService';
+import AuthService from '../Services/AuthService';
 import { AuthContext } from '../Context/AuthContext'
 import './NavBar.css'
 import logo from'../images/logo.png'
 
 const NavBar = (props) => {
-  const {isAuthenticated,user,setIsAuthenticated,setUser} = useContext(AuthContext);
+  const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);
 
   const onClickLogoutHandler = () => {
-    AuthService.logout().then(data => {
-      if(data.success){
+    AuthService.logout().then((data) => {
+      if (data.success) {
         setUser(data.user);
-        setIsAuthenticated(false)
+        setIsAuthenticated(false);
       }
-    })
-  }
-
+    });
+  };
   const unauthenticatedNavBar = () => {
     return (
       <>
         <ul>
         
-          <li className="nav-item">
             <Link className="nav-link" href="/">
-              Home
+              <li className="nav-item">
+                Home
+              </li>
             </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" href="/login">
-              Login
+              <li className="nav-item">
+                Login
+              </li>
             </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" href="/register">
-              Register
+              <li className="nav-item">
+                Register
+              </li>
             </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" href="/articles">
-              Articles
+              <li className="nav-item">
+                Articles
+              </li>
             </Link>
-          </li>
         </ul>
         <form className="form-inline my-2 my-md-0">
           <input
@@ -64,26 +63,26 @@ const NavBar = (props) => {
               Profile
             </Link>
           </li> */}
-          <li className="nav-item">
             <Link className="nav-link" href="/workouts/new">
-              Create Workout
+              <li className="nav-item">
+                Create Workout
+              </li>
             </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" href="/workouts">
-              WorkoutHistory
+              <li className="nav-item">
+                WorkoutHistory
+              </li>
             </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" href="/articles/new">
-              Post an Article
+              <li className="nav-item">
+                Post an Article
+              </li>
             </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" href="/articles">
-              Articles
+              <li className="nav-item">
+                Articles
+              </li>
             </Link>
-          </li>
         </ul>
         <form className="form-inline my-2 my-md-0">
           <input
@@ -124,41 +123,7 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse" id="nav-button">
           <ul className="navbar-nav mr-auto">
             {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
-            </ul>
-             {/* <li className="nav-item">
-              <Link className="nav-link" href="#">
-                Profile<span className="sr-only">(current)</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#">
-                Create Workout
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#">
-                WorkoutHistory
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#">
-                Post an Article
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#">
-                Articles
-              </Link>
-            </li>
           </ul>
-          <form className="form-inline my-2 my-md-0">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Search Articles"
-              aria-label="Search"
-            />
-          </form>  */}
         </div>
       </nav>
     </div>
