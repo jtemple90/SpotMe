@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const articleSchema = new Schema({
+const workoutSchema = new Schema({
   title: {
     type: String,
     required: true,
   },
-  body: {
-    type: String,
-    required: true,
-  },
-  imageUrl: {
+  type: {
     type: String,
   },
+  description: {
+    type: String,
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
@@ -21,9 +21,12 @@ const articleSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-});
+  exercises: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Exercise",
+    }],
+}, {timestamps: true});
 
+const Workout = mongoose.model("Workout", workoutSchema);
 
-const Article = mongoose.model("Article", articleSchema);
-
-module.exports = Article;
+module.exports = Workout;

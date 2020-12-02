@@ -1,23 +1,36 @@
+const passport = require("passport");
+const passportConfig = require("../passport");
+const JWT = require("jsonwebtoken");
 const db = require("../models");
 
 const index = (req, res) => {
-  db.User.find({})
+  db.User.find()
     .then((foundUsers) => {
       console.log(foundUsers);
-      res.json({ users: foundUsers })
+      res.json({users: foundUsers})
     }).catch(err => res.json(err, "Unable to get user data"))
 };
 const create = (req, res) => {
-  db.User.create(req.body, (err, savedUser) => {
+  const {username, password, email} = req.body
+  db.User.create({username}, (err, savedUser) => {
     res.json({ user: savedUser })
-  }).catch(err => {
+  }).catch((err) => {
      console.log("Error in user.create:", err);
      res.json({ Error: "Unable to get data" });
   })
+  const newUser = new User({ username, password, email });
+    newUser.save(err => {
+      if (err) console.log(err)
+
+      else {
+        console.log('Account Succesfully created')
+      }
+    })
 };
 
 const show = (req, res) => {
   db.User.findById(req.params.id)
+  .populate({path: 'workouts', path: 'articles'})
     .then((foundUser) => {
       res.json({  user: foundUser })
     }).catch(err => {
@@ -41,6 +54,16 @@ const update = (req, res) => {
 const destroy = (req, res) => {
   db.User.findByIdAndDelete(req.params.id, (err, deletedUser) => {
     if (err) console.log('Error in the deteled users:', err)
+    db.Workout.remove({
+      _id: {
+        $in: deletedUser.workouts
+      }
+    })
+    db.Article.remove({
+      _id: {
+        $in: deletedUser.articles,
+      },
+    });
 
     res.json({ user: deletedUser })
   })

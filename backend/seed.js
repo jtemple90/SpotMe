@@ -1,7 +1,7 @@
 const db = require('./models');
 const data = require('./workoutData.json');
 
-db.Exercise.deleteMany({}, (err, deletedExercises) => {
+// db.Exercise.deleteMany({}, (err, deletedExercises) => {
   db.Exercise.create(data.exercises, (err, seededExercises) =>  {
     if(err) console.log(err);
 
@@ -9,4 +9,4 @@ db.Exercise.deleteMany({}, (err, deletedExercises) => {
 
     process.exit();
   });
-});
+// });
