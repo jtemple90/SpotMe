@@ -84,7 +84,7 @@ class EditArticle extends Component {
       .then(res => console.log(res.data))
       .catch(error => console.log(error))
 
-    window.location = "/";
+    window.location = "/articles";
   }
 
   render() {
@@ -123,7 +123,6 @@ class EditArticle extends Component {
               />
             </div>
           </div>
-
           <div className="form-group">
             <input
               type="submit"

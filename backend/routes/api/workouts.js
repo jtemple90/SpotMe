@@ -1,29 +1,23 @@
 const express = require("express");
 const router = express.Router();
-
 const Workout = require("../../models/Workout");
-// const
-// @route Get api/Workouts
-
 
 // All Workouts
 router.get("/", (req, res) => {
   Workout.find()
     .sort({ date: -1 })
     .then((workouts) => res.json(workouts))
-    .catch((err) => res.status(400).json("Error: " + err));
-});
-
+    .catch((err) => res.status(400).json("Error: " + err))
+})
 // Create Workout
 router.post("/add", (req, res) => {
   const newWorkout = new Workout({
     username: req.body.username,
     title: req.body.title,
     description: req.body.description,
-  });
-  newWorkout.save().then(workout => res.json(workout));
-});
-
+  })
+  newWorkout.save().then(workout => res.json(workout))
+})
 //Delete Workout :id
 router.delete("/:id", (req, res) => {
   Workout.findByIdAndDelete(req.params.id)
@@ -33,9 +27,7 @@ router.delete("/:id", (req, res) => {
 // Show
 router.get("/:id", (req, res) => {
   Workout.findById(req.params.id)
-    .then((foundWorkout) => {
-      res.json({ workout: foundWorkout });
-    })
+    .then(workout =>  res.json(workout))
     .catch((err) => {
       console.log("Error in Workout.show:", err);
       res.json({ Error: "Unable to get data" });
@@ -50,7 +42,8 @@ router.post("/update/:id", (req, res) => {
       workout.description = req.body.description;
       workout.date = Date.parse(req.body.date);
 
-      workout.save()
+      workout
+        .save()
         .then(() => res.json("workout updated!"))
         .catch((err) => res.status(400).json("Error: " + err));
     })

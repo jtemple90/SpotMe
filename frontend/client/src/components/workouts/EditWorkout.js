@@ -1,35 +1,35 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class EditWorkout extends Component {
   constructor(props) {
     super(props);
 
-    // this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    // this.onChangeDate = this.onChangeDate.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       username: this.username,
       title: "",
       description: "",
-      // date: this.date,
+      date: new Date(),
       users: [],
     };
   }
 
   componentDidMount() {
     axios.get("http://localhost:4000/api/workouts/" + this.props.match.params.id)
-      .then((res) => {
+      .then(response => {
         this.setState({
-          username: res.data.username,
-          title: res.data.title,
-          description: res.data.description,
-          // date: new Date(res.data.date),
+          username: response.data.username,
+          title: response.data.title,
+          description: response.data.description,
+          date: new Date(response.data.date)
         });
       })
       .catch(function (error) {
@@ -43,17 +43,17 @@ class EditWorkout extends Component {
               users: response.data.map((user) => user.username),
             });
         }
-       })
-        .catch((error) => {
-          console.log(error);
-        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  //  onChangeUsername(event) {
-  //    this.setState({
-  //      username: event.target.value,
-  //    });
-  //  }
+  onChangeUsername(event) {
+    this.setState({
+      username: event.target.value,
+    });
+  }
   onChangeTitle(event) {
     this.setState({
       title: event.target.value,
@@ -64,11 +64,11 @@ class EditWorkout extends Component {
       description: event.target.value,
     });
   }
-  // onChangeDate(date) {
-  //   this.setState({
-  //     date: date,
-  //   });
-  // }
+  onChangeDate(date) {
+    this.setState({
+      date: date,
+    });
+  }
 
   onSubmit(event) {
     event.preventDefault();
@@ -81,8 +81,8 @@ class EditWorkout extends Component {
     };
     console.log(workout);
 
-    axios.post("http:localhost:4000/api/workouts/update/" + this.props.match.params.id, workout)
-      .then((res) => console.log(res.data))
+    axios.post("http://localhost:4000/api/workouts/update/" + this.props.match.params.id, workout)
+      .then(res => console.log(res.data))
       .catch((error) => console.log(error));
 
     window.location = "/workouts";
@@ -115,9 +115,15 @@ class EditWorkout extends Component {
               onChange={this.onChangeDescription}
             />
           </div>
-          {/* <div className="form-group">
-            <label>Date: {this.state.date}</label>
-          </div> */}
+          <div className="form-group">
+            <label>Date: </label>
+            <div>
+              <DatePicker
+                selected={this.state.date}
+                onChange={this.onChangeDate}
+              />
+            </div>
+          </div>
           <div className="form-group">
             <input type="submit" value="Submit" className="btn btn-primary" />
           </div>

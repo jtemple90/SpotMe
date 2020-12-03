@@ -18,8 +18,6 @@ app.use(cookieParser())
 app.use(cors());
 app.use(express.json());
 
-
-
 require('dotenv').config();
 
 
@@ -30,18 +28,10 @@ const configOptions = {
   useUnifiedTopology: true,
   useFindAndModify: false,
 };
-
 // Connect to mongo
 mongoose.connect(db, configOptions)
   .then(() => console.log('Mongo Db Connected...'))
   .catch(err => console.log(err))
-
-
-
-
-// // DB config
-// const db = require('./config/keys').MONGODB_URI
-
 
 app.use('/api/articles', articles)
 app.use('/api/users', users);
