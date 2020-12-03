@@ -55,7 +55,7 @@ class NewArticle extends Component {
 
     const article = {
       username: this.state.username,
-      title: this.state.username,
+      title: this.state.title,
       body: this.state.body,
       date: this.state.date,
     };
@@ -77,7 +77,7 @@ class NewArticle extends Component {
               value={this.state.username}
               onChange={this.onChangeUsername}
             >
-              {this.state.users.map(function (user) {
+              {this.state.users.map(function(user) {
                 return (
                   <option key={user} value={user}>
                     {user}

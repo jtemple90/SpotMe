@@ -11,7 +11,7 @@ const app = express();
 
 const articles = require('./routes/api/articles')
 const workouts = require('./routes/api/workouts')
-// const users = require('./routes/api/users')
+const users = require('./routes/api/users')
 
 app.use(bodyParser.json())
 app.use(cookieParser())
@@ -44,7 +44,7 @@ mongoose.connect(db, configOptions)
 
 
 app.use('/api/articles', articles)
-// app.use('/api/v1/exercises', routes.exercises);
+app.use('/api/users', users);
 app.use('/api/workouts', workouts);
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server is running of Port ${PORT}`));

@@ -6,6 +6,7 @@ class NewUser extends Component {
     super(props);
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
+  
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -29,8 +30,9 @@ class NewUser extends Component {
     console.log(user);
 
     axios
-      .post("http://localhost:5000/users/add", user)
-      .then((res) => console.log(res.data));
+      .post("http://localhost:4000/api/users/add", user)
+      .then((res) => console.log(res.data))
+      .catch((error) => console.log(error))
 
     this.setState({
       username: "",

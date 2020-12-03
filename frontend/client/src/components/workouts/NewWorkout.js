@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -77,7 +77,7 @@ class NewWorkout extends Component {
               value={this.state.username}
               onChange={this.onChangeUsername}
             >
-              {this.state.users.map(function (user) {
+              {this.state.users.map(function(user) {
                 return (
                   <option key={user} value={user}>
                     {user}
@@ -128,3 +128,4 @@ class NewWorkout extends Component {
   }
 }
 export default NewWorkout;
+
