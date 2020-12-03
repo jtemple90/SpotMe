@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -23,10 +23,19 @@ class NewWorkout extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      users: ["test User"],
-      username: "test user",
-    });
+    axios
+      .get("http://localhost:4000/api/users/")
+      .then(response => {
+        if (response.data.length > 0) {
+          this.setState({
+            users: response.data.map(user => user.username),
+            username: response.data[0].username,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   onChangeUsername(event) {
@@ -60,6 +69,12 @@ class NewWorkout extends Component {
       date: this.state.date,
     };
     console.log(workout);
+
+    axios
+      .post("http://localhost:4000/api/workouts/add", workout)
+      .then((res) => console.log(res.data))
+      .catch((error) => console.log(error));
+
     window.location = "/workouts";
   }
 
@@ -77,9 +92,9 @@ class NewWorkout extends Component {
               value={this.state.username}
               onChange={this.onChangeUsername}
             >
-              {this.state.users.map(function(user) {
+              {this.state.users.map(function (user) {
                 return (
-                  <option className='opt-dropdown' key={user} value={user}>
+                  <option className="opt-dropdown" key={user} value={user}>
                     {user}
                   </option>
                 );
@@ -102,7 +117,7 @@ class NewWorkout extends Component {
               type="text"
               className="form-control"
               value={this.state.description}
-              onChange={this.onChangeBody}
+              onChange={this.onChangeDescription}
             />
           </div>
           <div className="form-group">
@@ -118,7 +133,7 @@ class NewWorkout extends Component {
           <div className="form-group">
             <input
               type="submit"
-              value="Post Article"
+              value="Create Workout"
               className="btn btn-primary"
             />
           </div>

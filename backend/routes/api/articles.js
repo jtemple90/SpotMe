@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Article = require('../../models/Article');
 // const
 // @route Get api/articles
@@ -15,7 +14,7 @@ router.get('/', (req,res) => {
 })
 
 // Create Article
-router.post('/new', (req, res) => {
+router.post('/add', (req, res) => {
   const newArticle = new Article({
     username: req.body.username,
     title: req.body.title,

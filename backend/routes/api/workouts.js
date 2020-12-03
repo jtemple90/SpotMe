@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 });
 
 // Create Workout
-router.post("/", (req, res) => {
+router.post("/add", (req, res) => {
   const newWorkout = new Workout({
     username: req.body.username,
     title: req.body.title,

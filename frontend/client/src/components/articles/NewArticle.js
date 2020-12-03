@@ -23,10 +23,19 @@ class NewArticle extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      users: ["test User"],
-      username: "test user",
-    });
+    axios
+      .get("http://localhost:4000/api/users/")
+      .then((response) => {
+        if (response.data.length > 0) {
+          this.setState({
+            users: response.data.map((user) => user.username),
+            username: response.data[0].username,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   onChangeUsername(event) {
@@ -46,8 +55,8 @@ class NewArticle extends Component {
   }
   onChangeDate(date) {
     this.setState({
-      date: date
-    })
+      date: date,
+    });
   }
 
   onSubmit(event) {
@@ -60,6 +69,12 @@ class NewArticle extends Component {
       date: this.state.date,
     };
     console.log(article);
+
+    axios
+      .post("http://localhost:4000/api/articles/add", article)
+      .then((res) => console.log(res.data))
+      .catch((error) => console.log(error));
+
     window.location = "/articles";
   }
 
@@ -77,7 +92,8 @@ class NewArticle extends Component {
               value={this.state.username}
               onChange={this.onChangeUsername}
             >
-              {this.state.users.map(function(user) {
+              {
+                this.state.users.map(function (user) {
                 return (
                   <option key={user} value={user}>
                     {user}
@@ -101,7 +117,7 @@ class NewArticle extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.body }
+              value={this.state.body}
               onChange={this.onChangeBody}
             />
           </div>
