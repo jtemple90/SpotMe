@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './NewUser.css'
 
 class NewUser extends Component {
   constructor(props) {
@@ -75,7 +76,6 @@ class NewUser extends Component {
         <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Username: </label>
             <input
               placeholder="Create a username"
               type="text"
