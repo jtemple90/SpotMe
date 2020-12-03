@@ -101,7 +101,7 @@ class NewArticle extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.bod }
+              value={this.state.body }
               onChange={this.onChangeBody}
             />
           </div>
