@@ -10,3 +10,21 @@
   justify-content: center;
   align-items: center;
 }
+.landlogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20em;
+  opacity: 0.3;
+  z-index: -1;
+  position: absolute;
+  top: 30vh;
+}
+.landp {
+  position: absolute;
+  z-index: -1;
+  bottom: 25vh;
+  opacity: 0.7;
+  font-size: 18px;
+}
