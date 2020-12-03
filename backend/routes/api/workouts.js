@@ -10,7 +10,8 @@ const Workout = require("../../models/Workout");
 router.get("/", (req, res) => {
   Workout.find()
     .sort({ date: -1 })
-    .then(workouts => res.json(workouts));
+    .then((workouts) => res.json(workouts))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 // Create Workout

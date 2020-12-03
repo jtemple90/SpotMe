@@ -4,10 +4,10 @@ import axios from "axios";
 
 const Workout = (props) => (
   <tr>
-    {/* <td>{props.workout.username}</td> */}
+    <td>{props.workout.username}</td>
     <td>{props.workout.title}</td>
-    <td>{props.workout.description}</td>
-    <td>{props.workout.date.substring(0, 10)}</td>
+    {/* <td>{props.workout.description}</td>*/}
+    <td>{props.workout.date.substring(0, 10)}</td> 
     <td>
       <Link to={"/edit/" + props.workout._id}>edit</Link> | <a href="#" onClick={() => {props.deleteWorkout(props.workout._id);
         }}>delete</a>
@@ -26,7 +26,7 @@ class Workouts extends Component {
 
   componentDidMount() {
     axios
-      .get("https://localhost:4000/api/workouts/")
+      .get("http://localhost:4000/api/workouts/")
       .then(res => {
         this.setState({ workouts: res.data });
       })
@@ -35,11 +35,12 @@ class Workouts extends Component {
 
   deleteWorkout(id) {
     axios
-      .delete("https://localhost:4000/api/workouts/" + id)
-      .then(res => console.log(res.data));
+      .delete("http://localhost:4000/api/workouts/" + id)
+      .then(res => console.log(res.data))
+      .catch((err) => console.log(err))
 
     this.setState({
-      workouts: this.state.workouts.filter(el => el._id != id),
+      workouts: this.state.workouts.filter(el => el._id !== id),
     });
   }
 
@@ -64,6 +65,7 @@ class Workouts extends Component {
             <tr>
               <th>Username</th>
               <th>Title</th>
+              <th>Date</th>
               <th>Actions</th>
             </tr>
           </thead>
