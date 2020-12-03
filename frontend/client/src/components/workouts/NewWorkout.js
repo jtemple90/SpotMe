@@ -79,7 +79,7 @@ class NewWorkout extends Component {
             >
               {this.state.users.map(function(user) {
                 return (
-                  <option key={user} value={user}>
+                  <option className='opt-dropdown' key={user} value={user}>
                     {user}
                   </option>
                 );

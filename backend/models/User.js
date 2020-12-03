@@ -9,17 +9,23 @@ const userSchema = new Schema(
       required: true,
       trim: true,
       unique: true,
-      minlength: 4,
+      minlength: 5,
       maxLength: 20,
     },
-    // email: {
-    //   type: String,
-    //   required: true,
-    // },
-    // password: {
-    //   type: String,
-    //   required: true,
-    // },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      minlength: 10
+    },
+    goal: {
+      type: String,
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+    },
     // image: {
     //   type: String,
     // },
