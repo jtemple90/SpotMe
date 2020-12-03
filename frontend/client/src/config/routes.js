@@ -19,10 +19,10 @@ export default (
   <NavBar />
     <Route path="/" exact component={(LandingPage)} />
     <Route path="/workouts" exact component={(Workouts)} />
-    <Route path="/workouts/edit/:id" exact component={(EditWorkout)} />
+    <Route path="/workouts/update/:id" exact component={(EditWorkout)} />
     <Route path="/workouts/new" exact component={(NewWorkout)} />
     <Route path="/articles" exact component={(Articles)} />
-    <Route path="/articles/edit/:id" exact component={(EditArticle)} />
+    <Route path="/articles/update/:id" exact component={(EditArticle)} />
     <Route path="/articles/new" exact component={(NewArticle)} />
     <Route path="/user/new" exact component={(NewUser)} />
     {/* <Route path="/user/edit/:id" exact component={(EditUser)} />

@@ -9,15 +9,8 @@ const Article = props => (
     {/* <td>{props.article.body}</td> */}
     {/* <td>{props.article.date.substring(0, 10)}</td> */}
     <td>
-      <Link to={"/edit/" + props.article._id}>edit</Link> |{" "}
-      <a
-        href="#"
-        onClick={() => {
-          props.deleteArticle(props.article._id);
-        }}
-      >
-        delete
-      </a>
+      <Link to={"/edit/" + props.article._id}>Edit</Link> |
+      <a href="#" onClick={() => {props.deleteArticle(props.article._id)}}>Delete</a>
     </td>
   </tr>
 );
