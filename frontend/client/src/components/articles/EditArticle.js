@@ -14,7 +14,7 @@ class EditArticle extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: "",
+      username: this.username,
       title: "",
       body: "",
       date: new Date(),
@@ -40,7 +40,6 @@ class EditArticle extends Component {
         if (response.data.length > 0) {
           this.setState({
             users: response.data.map((user) => user.username),
-         
           });
         }
       })
@@ -81,7 +80,7 @@ class EditArticle extends Component {
     };
     console.log(article);
 
-    axios.post("http://localhost:4000/api/articles/update"+ this.props.match.params.id, article)
+    axios.post("http://localhost:4000/api/articles/update/"+ this.props.match.params.id, article)
       .then(res => console.log(res.data))
       .catch(error => console.log(error))
 
@@ -94,22 +93,7 @@ class EditArticle extends Component {
         <h3>Edit your article</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Username: </label>
-            <select
-              ref="userInput"
-              required
-              className="form-control"
-              value={this.state.username}
-              onChange={this.onChangeUsername}
-            >
-              {this.state.users.map(function (user) {
-                return (
-                  <option key={user} value={user}>
-                    {user}
-                  </option>
-                );
-              })}
-            </select>
+            <label>Username: {this.state.username} </label>
           </div>
           <div className="form-group">
             <label>Title: </label>
@@ -143,7 +127,7 @@ class EditArticle extends Component {
           <div className="form-group">
             <input
               type="submit"
-              value="Post Article"
+              value="Submit"
               className="btn btn-primary"
             />
           </div>

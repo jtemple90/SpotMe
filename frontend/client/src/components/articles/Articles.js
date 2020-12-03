@@ -9,7 +9,7 @@ const Article = props => (
     {/* <td>{props.article.body}</td> */}
     {/* <td>{props.article.date.substring(0, 10)}</td> */}
     <td>
-      <Link to={"/edit/" + props.article._id}>Edit</Link> |
+      <Link to={"articles/update/" + props.article._id}>Edit</Link> |
       <a href="#" onClick={() => {props.deleteArticle(props.article._id)}}>Delete</a>
     </td>
   </tr>
@@ -42,12 +42,12 @@ class Articles extends Component {
   }
 
   articleList() {
-    return this.state.articles.map(currentarticle => {
+    return this.state.articles.map(currentArticle => {
       return (
         <Article
-          article={currentarticle}
+          article={currentArticle}
           deleteArticle={this.deleteArticle}
-          key={currentarticle._id}
+          key={currentArticle._id}
         />
       )
     })

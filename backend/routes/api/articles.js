@@ -31,26 +31,26 @@ router.delete("/:id", (req, res) => {
 })
 // Show 
 router.get("/:id", (req, res) => {
-  Article.findOne(req.params.id)
-    .then((foundArticle) => {
-      res.json({ article: foundArticle })
-    }).catch((err) => {
-      console.log("Error in article.show:", err);
-      res.json({ Error: "Unable to get data" });
-    })
+  Article.findById(req.params.id)
+    .then(article => res.json(article))
+    .catch(err => res.status(400).json('Error: ' + err));
 });
-//Update
-router.put("/update/:id", (req, res) => {
-  Article.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-    (err, updatedArticle) => {
-      if (err) console.log("The error in update article is:", err);
 
-      res.json({ article: updatedArticle });
-    }
-  );
+//Update
+router.post("/update/:id", (req, res) => {
+  Article.findById(req.params.id)
+    .then(article => {
+      article.username = req.body.username;
+      article.title = req.body.title;
+      article.body = req.body.body;
+      article.date = Date.parse(req.body.date);
+
+      article
+        .save()
+        .then(() => res.json("article updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 module.exports = router

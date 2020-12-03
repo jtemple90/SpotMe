@@ -32,7 +32,7 @@ router.delete("/:id", (req, res) => {
 });
 // Show
 router.get("/:id", (req, res) => {
-  Workout.findOne(req.params.id)
+  Workout.findById(req.params.id)
     .then((foundWorkout) => {
       res.json({ workout: foundWorkout });
     })
@@ -42,17 +42,20 @@ router.get("/:id", (req, res) => {
     });
 });
 //Update
-router.put("/:id", (req, res) => {
-  Workout.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-    (err, updatedWorkout) => {
-      if (err) console.log("The error in update Workout is:", err);
+router.post("/update/:id", (req, res) => {
+  Workout.findById(req.params.id)
+    .then(workout => {
+      workout.username = req.body.username;
+      workout.title = req.body.title;
+      workout.description = req.body.description;
+      workout.date = Date.parse(req.body.date);
 
-      res.json({ workout: updatedWorkout });
-    }
-  );
+      workout.save()
+        .then(() => res.json("workout updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+    
 });
 
 module.exports = router;

@@ -66,6 +66,7 @@ class NewUser extends Component {
       password: "",
     });
     // add an onSuccess redirect to home
+    window.location = "/";
   }
 
   render() {
