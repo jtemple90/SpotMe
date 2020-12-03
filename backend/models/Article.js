@@ -14,10 +14,10 @@ const articleSchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  // username: {
-  //   type: String,
-  //   required: true,
-  // }
+  username: {
+    type: String,
+    required: true,
+  }
   
 },{timestamps: true});
 

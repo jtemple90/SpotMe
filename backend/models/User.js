@@ -12,17 +12,17 @@ const userSchema = new Schema(
       minlength: 4,
       maxLength: 20,
     },
-    email: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-    },
+    // email: {
+    //   type: String,
+    //   required: true,
+    // },
+    // password: {
+    //   type: String,
+    //   required: true,
+    // },
+    // image: {
+    //   type: String,
+    // },
     createdAt: {
       type: Date,
       default: Date.now,

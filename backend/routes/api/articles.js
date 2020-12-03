@@ -9,13 +9,15 @@ const Article = require('../../models/Article');
 // All Articles
 router.get('/', (req,res) => {
   Article.find()
-  .sort({ date: -1 })
-    .then(articles => res.json(articles))
+    .sort({ date: -1 })
+    .then((articles) => res.json(articles))
+    .catch((err) => res.status(400).json("Error: " + err));
 })
 
 // Create Article
-router.post('/', (req, res) => {
+router.post('/new', (req, res) => {
   const newArticle = new Article({
+    username: req.body.username,
     title: req.body.title,
     body: req.body.body
   });
@@ -39,7 +41,7 @@ router.get("/:id", (req, res) => {
     })
 });
 //Update
-router.put("/:id", (req, res) => {
+router.put("/update/:id", (req, res) => {
   Article.findByIdAndUpdate(
     req.params.id,
     req.body,

@@ -1,25 +1,32 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const workoutSchema = new Schema({
-  title: {
-    type: String,
-    required: true,
-  },
+const workoutSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
 
-  description: {
-    type: String,
-  },
+    description: {
+      type: String,
+    },
 
-  createdAt: {
-    type: Date,
-    default: Date.now,
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    // exercises: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Exercise",
+    //   }],
   },
-  // exercises: [{
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: "Exercise",
-  //   }],
-}, {timestamps: true});
+  { timestamps: true }
+);
 
 const Workout = mongoose.model("Workout", workoutSchema);
 

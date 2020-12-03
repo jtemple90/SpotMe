@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-// import AuthService from '../Services/AuthService';
-// import { AuthContext } from '../Context/AuthContext'
 import './NavBar.css'
 import logo from'../images/logo.png'
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-  }
   render(){
    return (
     <div className="container">
@@ -31,8 +26,8 @@ class NavBar extends Component {
         <div className="collapse navbar-collapse" id="navbarsExample09">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" >
-                Profile
+              <Link className="nav-link" to="/user/new">
+                Create User
               </Link>
             </li>
             <li className="nav-item">

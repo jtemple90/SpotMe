@@ -16,8 +16,9 @@ router.get("/", (req, res) => {
 // Create Workout
 router.post("/", (req, res) => {
   const newWorkout = new Workout({
+    username: req.body.username,
     title: req.body.title,
-    description: req.body.description
+    description: req.body.description,
   });
   newWorkout.save().then(workout => res.json(workout));
 });
