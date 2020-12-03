@@ -1,55 +1,50 @@
 const express = require("express");
 const cors = require('cors');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 const path = require('path');
-
 const cookieParser = require('cookie-parser');
-const routes = require('./routes');
-require('dotenv').config();
-
 const app = express();
-const PORT = process.env.PORT || 4000;
+// import morgan from "morgan";
+// import config from "./config";
 
-// const corsOptions ={
-//   origin: 'http://localhost:3000'
-// };
+
+const articles = require('./routes/api/articles')
+const workouts = require('./routes/api/workouts')
+// const users = require('./routes/api/users')
+
+app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(cors());
 app.use(express.json());
 
 
 
+require('dotenv').config();
 
 
-// const uri = process.env.MONGODB_URI;
+const db = require("./config/keys").MONGODB_URI;
+const configOptions = {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+};
 
-// mongoose.connect(uri, {
-//   useUnifiedTopology: true, 
-//   useNewUrlParser: true,
-//   useCreationIndex: true,
-// });
-// const connection = mongoose.connection;
-// connection.once("open", () => {
-//   console.log("MongoDb database connection established successfully");
-// });
+// Connect to mongo
+mongoose.connect(db, configOptions)
+  .then(() => console.log('Mongo Db Connected...'))
+  .catch(err => console.log(err))
 
 
-app.use('/api/v1/exercises', routes.exercises);
-app.use('/articles', routes.articles);
-app.use('/users', routes.users);
-app.use('/workouts', routes.workouts);
 
-// const User = require('./models/User')
 
-// const userInput = {
-//   username: 'testing',
-//   password: '1234567890',
-//   email: 'testing@gmail.com'
-// }
-// const user = new User(userInput);
-// user.save((err, document) => {
-//   if (err) console.log(err);
+// // DB config
+// const db = require('./config/keys').MONGODB_URI
 
-//   console.log(document)
-// })
+
+app.use('/api/articles', articles)
+// app.use('/api/v1/exercises', routes.exercises);
+app.use('/api/workouts', workouts);
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server is running of Port ${PORT}`));

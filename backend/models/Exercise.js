@@ -12,12 +12,6 @@ const exerciseSchema = new Schema({
   equipment: {
     type: String
   },
-  sets: {
-    type: Number,
-  },
-  reps: {
-    type: Number,
-  },
   imageUrl: {
     type: String,
   },

@@ -10,14 +10,16 @@ const articleSchema = new Schema({
     type: String,
     required: true,
   },
-  imageUrl: {
-    type: String,
-  },
-  createdAt: {
+  date: {
     type: Date,
-    default: Date.now,
+    default: Date.now()
   },
-});
+  // username: {
+  //   type: String,
+  //   required: true,
+  // }
+  
+},{timestamps: true});
 
 
 const Article = mongoose.model("Article", articleSchema);

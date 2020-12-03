@@ -1,8 +1,6 @@
 import React from 'react' 
-import ReactDOM from "react-dom";
-import GoogleLogin from "react-google-login";
 import './LandingPage.css'
-import axios from "axios";
+
 
 const LandingPage = () => {
 

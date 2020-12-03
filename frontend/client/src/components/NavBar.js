@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 // import AuthService from '../Services/AuthService';
 // import { AuthContext } from '../Context/AuthContext'
 import './NavBar.css'
 import logo from'../images/logo.png'
 
-const NavBar = (props) => {
-  return (
+class NavBar extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg rounded">
         <a className="navbar-brand brand-name" href="/">
@@ -27,27 +31,27 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse" id="navbarsExample09">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" >
                 Profile
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" to="/workouts/new">
                 Create Workout
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" to="/workouts">
                 WorkoutHistory
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" to="/articles/new">
                 Post an Article
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" to="/articles">
                 Articles
               </Link>
             </li>
@@ -64,5 +68,6 @@ const NavBar = (props) => {
       </nav>
     </div>
   );
-};
+  }
+}
 export default NavBar; 

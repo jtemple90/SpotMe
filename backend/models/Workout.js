@@ -6,9 +6,7 @@ const workoutSchema = new Schema({
     type: String,
     required: true,
   },
-  type: {
-    type: String,
-  },
+
   description: {
     type: String,
   },
@@ -17,14 +15,10 @@ const workoutSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  // user: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "User",
-  // },
-  exercises: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Exercise",
-    }],
+  // exercises: [{
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "Exercise",
+  //   }],
 }, {timestamps: true});
 
 const Workout = mongoose.model("Workout", workoutSchema);

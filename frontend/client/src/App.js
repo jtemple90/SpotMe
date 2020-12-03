@@ -4,17 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Routes from './config/routes'
 import NavBar from './components/NavBar' 
 import './App.css'
+import ArticlesList from './components/articles/ArticleList'
 import { Router } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import './store'
 function App() {
   return (
-    // <Router>
+    <Provider store={store}>
       <div className='App'>
         <NavBar />
+        <ArticlesList />
         { Routes }
         <Footer />
       </div>
-    // </Router>
+    </Provider>
     
     
   );
