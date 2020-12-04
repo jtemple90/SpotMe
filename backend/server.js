@@ -5,9 +5,6 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const app = express();
-// import morgan from "morgan";
-// import config from "./config";
-
 
 const articles = require('./routes/api/articles')
 const workouts = require('./routes/api/workouts')
@@ -36,5 +33,14 @@ mongoose.connect(db, configOptions)
 app.use('/api/articles', articles)
 app.use('/api/users', users);
 app.use('/api/workouts', workouts);
+// Serve static assets if in production
+if(process.env.NODE_ENV === production) {
+  //Set Static Folder
+  app.use(express.static('../frontend/client/build'))
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname), 'frontend', 'client', 'build', 'index.html')
+  })
+}
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server is running of Port ${PORT}`));
