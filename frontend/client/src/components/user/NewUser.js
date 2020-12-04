@@ -113,11 +113,6 @@ class NewUser extends Component {
               className="btn btn-primary"
             />
           </div>
-          <div>
-            <img className="landlogo1" src={Logo} alt="Logo" />
-            <br />
-            <p className="landp1">The Ultimate Workout Partner</p>
-          </div>
         </form>
       </div>
     );

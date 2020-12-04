@@ -3,7 +3,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Logo from "../../images/logo.png";
-
+import './NewArticle.css'
 class NewArticle extends Component {
   constructor(props) {
     super(props);
@@ -82,10 +82,9 @@ class NewArticle extends Component {
   render() {
     return (
       <div>
-        <h3>Post An Article!</h3>
+        <h3>New Article!</h3>
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Username: </label>
+          <div className="form-group1">
             <select
               ref="userInput"
               required
@@ -102,9 +101,9 @@ class NewArticle extends Component {
               })}
             </select>
           </div>
-          <div className="form-group">
-            <label>Title: </label>
+          <div className="form-group1">
             <input
+              placeholder="Enter Title..."
               type="text"
               required
               className="form-control"
@@ -112,9 +111,9 @@ class NewArticle extends Component {
               onChange={this.onChangeTitle}
             />
           </div>
-          <div className="form-group">
-            <label>Body: </label>
-            <input
+          <div className="form-group1">
+            <textarea
+              placeholder="Article content..."
               type="text"
               className="form-control"
               value={this.state.body}
@@ -130,7 +129,6 @@ class NewArticle extends Component {
               />
             </div>
           </div>
-
           <div className="form-group">
             <input
               type="submit"
@@ -139,11 +137,11 @@ class NewArticle extends Component {
             />
           </div>
         </form>
-        <div>
+        {/* <div>
           <img className="landlogo1" src={Logo} alt="Logo" />
           <br />
           <p className="landp1">The Ultimate Workout Partner</p>
-        </div>
+        </div> */}
       </div>
     );
   }

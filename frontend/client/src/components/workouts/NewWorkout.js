@@ -113,7 +113,7 @@ class NewWorkout extends Component {
             />
           </div>
           <div className="form-group1">
-            <input
+            <textarea
               placeholder="Enter Description..."
               type="text"
               className="form-control"
@@ -130,7 +130,6 @@ class NewWorkout extends Component {
               />
             </div>
           </div>
-
           <div className="form-group">
             <input
               type="submit"
@@ -139,11 +138,11 @@ class NewWorkout extends Component {
             />
           </div>
         </form>
-        <div>
+        {/* <div>
           <img className="landlogo1" src={Logo} alt="Logo" />
           <br />
           <p className="landp1">The Ultimate Workout Partner</p>
-        </div>
+        </div> */}
       </div>
     );
   }

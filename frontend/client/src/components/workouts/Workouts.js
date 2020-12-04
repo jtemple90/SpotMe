@@ -2,19 +2,9 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom'
 import axios from "axios";
 import Logo from "../../images/logo.png";
+import Workout from "./WorkoutCard";
 
-const Workout = (props) => (
-  <tr>
-    <td>{props.workout.username}</td>
-    <td>{props.workout.title}</td>
-    {/* <td>{props.workout.description}</td>*/}
-    <td>{props.workout.date.substring(0, 10)}</td> 
-    <td>
-      <Link to={"workouts/update/" + props.workout._id}>edit</Link> | <a href="#" onClick={() => {props.deleteWorkout(props.workout._id);
-        }}>delete</a>
-    </td>
-  </tr>
-);
+
 
 class Workouts extends Component {
   constructor(props) {
@@ -61,21 +51,10 @@ class Workouts extends Component {
     return (
       <div>
         <h3>All User Workouts</h3>
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th>Username</th>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>{this.workoutList()}</tbody>
-        </table>
-        <div>
-          <img className="landlogo1" src={Logo} alt="Logo" />
-          <br />
-          <p className="landp1">The Ultimate Workout Partner</p>
+        <div className="album py-5">
+          <div className="containera">
+            <div className="row">{this.workoutList()}</div>
+          </div>
         </div>
       </div>
     );

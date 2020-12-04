@@ -33,14 +33,14 @@ const userSchema = new Schema(
       type: Date,
       default: Date.now,
     },
-    // workouts: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Workout",
-    //   }],
-    // articles: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Article",
-    //   }],
+    workouts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Workout",
+      }],
+    articles: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Article",
+      }],
   },
   { timestamps: true });
 
