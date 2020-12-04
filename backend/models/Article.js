@@ -9,6 +9,7 @@ const articleSchema = new Schema({
   body: {
     type: String,
     required: true,
+    maxLength: 250,
   },
   date: {
     type: Date,

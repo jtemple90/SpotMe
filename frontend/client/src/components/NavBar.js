@@ -38,12 +38,12 @@ class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/workouts">
-                  WorkoutHistory
+                  All Workouts
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/articles/new">
-                  Post an Article
+                  Create Article
                 </Link>
               </li>
               <li className="nav-item">
