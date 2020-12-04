@@ -36,12 +36,12 @@ Create Workout<br/>
 <img width="674" alt="Screen Shot 2020-12-04 at 10 24 14 AM" src="https://user-images.githubusercontent.com/66657472/101194163-dd03de80-361a-11eb-91c6-b03c1c3964e3.png">
 
 Create Article<br/>
-<img width="623" alt="Screen Shot 2020-12-04 at 10 25 00 AM" src="https://user-images.githubusercontent.com/66657472/101194251-f86ee980-361a-11eb-8515-5763568f7a13.png">
-
-Articles
 <img width="640" alt="Screen Shot 2020-12-04 at 10 24 22 AM" src="https://user-images.githubusercontent.com/66657472/101194182-e2612900-361a-11eb-84a4-b26e590136bc.png">
 
-Workouts
+Articles<br/>
+<img width="623" alt="Screen Shot 2020-12-04 at 10 25 00 AM" src="https://user-images.githubusercontent.com/66657472/101194251-f86ee980-361a-11eb-8515-5763568f7a13.png">
+
+Workouts<br/>
 <img width="642" alt="Screen Shot 2020-12-04 at 10 24 33 AM" src="https://user-images.githubusercontent.com/66657472/101194207-e8efa080-361a-11eb-91f6-36aba49f019c.png">
 
 ## Author
