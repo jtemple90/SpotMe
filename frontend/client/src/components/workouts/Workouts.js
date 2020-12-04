@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom'
 import axios from "axios";
+import Logo from "../../images/logo.png";
 
 const Workout = (props) => (
   <tr>
@@ -71,6 +72,11 @@ class Workouts extends Component {
           </thead>
           <tbody>{this.workoutList()}</tbody>
         </table>
+        <div>
+          <img className="landlogo1" src={Logo} alt="Logo" />
+          <br />
+          <p className="landp1">The Ultimate Workout Partner</p>
+        </div>
       </div>
     );
   }

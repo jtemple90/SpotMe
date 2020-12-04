@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Logo from "../../images/logo.png";
 
 class NewArticle extends Component {
   constructor(props) {
@@ -92,8 +93,7 @@ class NewArticle extends Component {
               value={this.state.username}
               onChange={this.onChangeUsername}
             >
-              {
-                this.state.users.map(function (user) {
+              {this.state.users.map(function (user) {
                 return (
                   <option key={user} value={user}>
                     {user}
@@ -139,6 +139,11 @@ class NewArticle extends Component {
             />
           </div>
         </form>
+        <div>
+          <img className="landlogo1" src={Logo} alt="Logo" />
+          <br />
+          <p className="landp1">The Ultimate Workout Partner</p>
+        </div>
       </div>
     );
   }

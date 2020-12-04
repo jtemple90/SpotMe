@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import './NewUser.css'
+import Logo from "../../images/logo.png";
 
 class NewUser extends Component {
   constructor(props) {
@@ -111,6 +112,11 @@ class NewUser extends Component {
               value="Create User"
               className="btn btn-primary"
             />
+          </div>
+          <div>
+            <img className="landlogo1" src={Logo} alt="Logo" />
+            <br />
+            <p className="landp1">The Ultimate Workout Partner</p>
           </div>
         </form>
       </div>

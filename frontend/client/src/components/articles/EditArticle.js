@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Logo from "../../images/logo.png";
 
 class EditArticle extends Component {
   constructor(props) {
@@ -124,11 +125,12 @@ class EditArticle extends Component {
             </div>
           </div>
           <div className="form-group">
-            <input
-              type="submit"
-              value="Submit"
-              className="btn btn-primary"
-            />
+            <input type="submit" value="Submit" className="btn btn-primary" />
+          </div>
+          <div>
+            <img className="landlogo1" src={Logo} alt="Logo" />
+            <br />
+            <p className="landp1">The Ultimate Workout Partner</p>
           </div>
         </form>
       </div>

@@ -10,7 +10,6 @@ import Articles from "../components/articles/Articles";
 import EditArticle from "../components/articles/EditArticle";
 import NewArticle from "../components/articles/NewArticle";
 import NewUser from "../components/user/NewUser";
-// import EditUser from "../components/user/EditUser";
 // import ShowUser from "../components/user/ShowUser";
 
 
@@ -25,8 +24,7 @@ export default (
     <Route path="/articles/update/:id" exact component={(EditArticle)} />
     <Route path="/articles/new" exact component={(NewArticle)} />
     <Route path="/user/new" exact component={(NewUser)} />
-    {/* <Route path="/user/edit/:id" exact component={(EditUser)} />
-    <Route path="/user/:id" exact component={(ShowUser)} /> */}
+    {/* <Route path="/user/:id" exact component={(ShowUser)} /> */}
     <Footer/>
   </Router>
 );

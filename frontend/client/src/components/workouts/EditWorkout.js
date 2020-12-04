@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Logo from "../../images/logo.png";
 
 class EditWorkout extends Component {
   constructor(props) {
@@ -128,6 +129,11 @@ class EditWorkout extends Component {
             <input type="submit" value="Submit" className="btn btn-primary" />
           </div>
         </form>
+        <div>
+          <img className="landlogo1" src={Logo} alt="Logo" />
+          <br />
+          <p className="landp1">The Ultimate Workout Partner</p>
+        </div>
       </div>
     );
   }

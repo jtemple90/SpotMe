@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import './NewWorkout.css'
+import Logo from "../../images/logo.png";
 
 class NewWorkout extends Component {
   constructor(props) {
@@ -83,8 +85,7 @@ class NewWorkout extends Component {
       <div>
         <h3>Lets Build a Workout!</h3>
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Username: </label>
+          <div className="form-group1">
             <select
               ref="userInput"
               required
@@ -101,9 +102,9 @@ class NewWorkout extends Component {
               })}
             </select>
           </div>
-          <div className="form-group">
-            <label>Title: </label>
+          <div className="form-group1">
             <input
+              placeholder="Enter Title..."
               type="text"
               required
               className="form-control"
@@ -111,18 +112,18 @@ class NewWorkout extends Component {
               onChange={this.onChangeTitle}
             />
           </div>
-          <div className="form-group">
-            <label>Description: </label>
+          <div className="form-group1">
             <input
+              placeholder="Enter Description..."
               type="text"
               className="form-control"
               value={this.state.description}
               onChange={this.onChangeDescription}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group1">
             <label>Date: </label>
-            <div>
+            <div className="datepicker">
               <DatePicker
                 selected={this.state.date}
                 onChange={this.onChangeDate}
@@ -138,6 +139,11 @@ class NewWorkout extends Component {
             />
           </div>
         </form>
+        <div>
+          <img className="landlogo1" src={Logo} alt="Logo" />
+          <br />
+          <p className="landp1">The Ultimate Workout Partner</p>
+        </div>
       </div>
     );
   }
