@@ -88,13 +88,14 @@ class NewArticle extends Component {
             <select
               ref="userInput"
               required
-              className="form-control"
+              //  =========================Custom select box
+              className="form-control box"
               value={this.state.username}
               onChange={this.onChangeUsername}
             >
               {this.state.users.map(function (user) {
                 return (
-                  <option key={user} value={user}>
+                  <option key={user} value={user} className="option">
                     {user}
                   </option>
                 );

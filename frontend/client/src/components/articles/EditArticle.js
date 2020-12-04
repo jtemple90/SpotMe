@@ -127,11 +127,11 @@ class EditArticle extends Component {
           <div className="form-group">
             <input type="submit" value="Submit" className="btn btn-primary" />
           </div>
-          <div>
+          {/* <div>
             <img className="landlogo1" src={Logo} alt="Logo" />
             <br />
             <p className="landp1">The Ultimate Workout Partner</p>
-          </div>
+          </div> */}
         </form>
       </div>
     );

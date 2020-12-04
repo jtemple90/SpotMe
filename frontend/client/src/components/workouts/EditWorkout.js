@@ -129,11 +129,11 @@ class EditWorkout extends Component {
             <input type="submit" value="Submit" className="btn btn-primary" />
           </div>
         </form>
-        <div>
+        {/* <div>
           <img className="landlogo1" src={Logo} alt="Logo" />
           <br />
           <p className="landp1">The Ultimate Workout Partner</p>
-        </div>
+        </div> */}
       </div>
     );
   }
