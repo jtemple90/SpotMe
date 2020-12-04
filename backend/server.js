@@ -34,12 +34,12 @@ app.use('/api/articles', articles)
 app.use('/api/users', users);
 app.use('/api/workouts', workouts);
 // Serve static assets if in production
-if(process.env.NODE_ENV === production) {
+if(process.env.NODE_ENV === 'production') {
   //Set Static Folder
-  app.use(express.static('../frontend/client/build'))
+  app.use(express.static('client/build'))
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname), 'frontend', 'client', 'build', 'index.html')
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 }
 const PORT = process.env.PORT || 4000;
