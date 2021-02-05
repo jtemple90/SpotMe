@@ -6,20 +6,34 @@ import Logo from "../../images/logo.png";
 class NewUser extends Component {
   constructor(props) {
     super(props);
-
+    this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.onChangeLastName = this.onChangeLastName.bind(this);
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangeGoal = this.onChangeGoal.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
+      firstName: "",
+      lastName: "",
       username: "",
       email: "",
-      goal: "",
       password: "",
     };
+  }
+  
+
+  onChangeFirstName(e) {
+    this.setState({
+      fistName: e.target.value,
+    });
+  }
+
+  onChangeLastName(e) {
+    this.setState({
+      lastName: e.target.value,
+    });
   }
 
   onChangeUsername(e) {
@@ -30,11 +44,6 @@ class NewUser extends Component {
   onChangeEmail(e) {
     this.setState({
       email: e.target.value,
-    });
-  }
-  onChangeGoal(e) {
-    this.setState({
-      goal: e.target.value,
     });
   }
 
@@ -48,9 +57,9 @@ class NewUser extends Component {
     e.preventDefault();
 
     const user = {
+      Name: this.state.firstName,
+      lastName: this.state.lastName,
       username: this.state.username,
-      email: this.state.email,
-      goal: this.state.goal,
       password: this.state.password,
     };
 
@@ -62,9 +71,10 @@ class NewUser extends Component {
       .catch((error) => console.log(error));
 
     this.setState({
+      firstName: "",
+      lastName: "",
       username: "",
       email: "",
-      goal: "",
       password: "",
     });
     // add an onSuccess redirect to home

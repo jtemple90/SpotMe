@@ -24,7 +24,7 @@ const LandingPage = () => {
           </Link>
         </button>
         <p className="register-p">
-          No Account? <Link to="/register">Click here</Link>, to create an account
+          No Account? <Link to="/register">Click here</Link> to create an account!
         </p>
       </div>
     </div>

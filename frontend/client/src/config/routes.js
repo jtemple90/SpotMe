@@ -12,6 +12,7 @@ import NewArticle from "../components/articles/NewArticle";
 import NewUser from "../components/user/NewUser";
 import Login from '../pages/Login/Login';
 import Register from "../pages/Register/Register";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 
 
@@ -28,7 +29,7 @@ export default (
     <Route path="/user/new" exact component={(NewUser)} />
     <Route path="/login" exact component={(Login)}/>  
     <Route path="/register" exact component={(Register)}/>  
-    {/* <Route path="/user/:id" exact component={(ShowUser)} /> */}
+    <Route path="/user/:id" exact component={(UserProfile)} />
     {/* <Footer/> */}
   </Router>
 );
