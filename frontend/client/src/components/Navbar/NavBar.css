@@ -36,7 +36,7 @@ i {
   color: rgba(54, 53, 53, 0.719);
 }
 i:hover {
-  border-radius: 15px;
-  box-shadow: 3px 3px 10px rgba(58, 57, 57, 0.274),-3px -3px 10px rgba(58, 57, 57, 0.274);
+  border-radius: 50%;
+  box-shadow: .5px .5px 2px rgba(100, 100, 100, 0.274),-.5px -.5px 2px rgba(100, 100, 100, 0.274);
   color: black;
 }

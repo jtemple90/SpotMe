@@ -1,0 +1,63 @@
+h3 {
+  text-align: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 3em;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  max-width: 1000px;
+  align-items: center;
+  margin: 5em auto;
+
+}
+.form-control {
+  margin-top: 1em;
+  border-radius: 15px;
+  box-shadow: 1px;
+  outline: 0!important;
+}
+.form-control:hover {
+  outline: 0!important;
+}
+
+input, input:focus{
+  outline:none !important;
+  -webkit-appearance:none;
+}
+.btn {
+  margin-top: 1em;
+  max-width: 10em;
+}
+.landlogo1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 6%;
+  height: 20em;
+  opacity: 0.1;
+  z-index: -1;
+  position: absolute;
+  top: 50vh;
+}
+.landp1 {
+  position: absolute;
+  z-index: -1;
+  left: 11%;
+  bottom: 5vh;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+
+#root > div > div > p {
+display: flex;
+margin:auto;
+width: 100%;
+flex-direction: row;
+justify-content: center;
+}
