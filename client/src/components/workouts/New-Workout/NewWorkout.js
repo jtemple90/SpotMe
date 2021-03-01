@@ -134,11 +134,6 @@ class NewWorkout extends Component {
             />
           </div>
         </form>
-        {/* <div>
-          <img className="landlogo1" src={Logo} alt="Logo" />
-          <br />
-          <p className="landp1">The Ultimate Workout Partner</p>
-        </div> */}
       </div>
     );
   }
