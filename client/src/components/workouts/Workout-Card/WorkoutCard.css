@@ -1,0 +1,77 @@
+.workout__card-container {
+  display: flex-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 28em;
+  min-height: 16em;
+  margin:.3em;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.11), 0 3px 6px rgba(145, 19, 19, 0.151);
+}
+
+.workout__card-container:hover {
+  box-shadow: 1px 5px 10spx rgba(0, 0, 0, 0.452), 1px 6px 10px rgba(145, 19, 19, 0.151);
+
+}
+
+.workout__card-content {
+  height: 100%;
+}
+
+
+.workout__card-image {
+  height: 5em;
+  
+}
+
+.workout__card-username {
+  z-index: 6;
+  width: 5em;
+  text-align: center;
+  
+}
+.workout__card-title {
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+  text-align: end;
+  position: relative;
+  bottom: 1.3em;
+}
+
+.workout__card-desc {
+  position: relative;
+  bottom: 2em;
+  height: 7em;
+  font-size: .9rem;
+  overflow: scroll;
+}
+
+.workout__card-buttons {
+  position: relative;
+  z-index: 3;
+  font-weight: 700;
+}
+
+.workout__btn {
+  z-index: 3;
+  margin: 0 .5em;
+  padding: .3em 1em;
+  border-radius: 8px;
+  color: black;
+  
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.452);
+}
+.workout__btn:hover {
+  text-decoration: none;
+  transition: .2s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.719);
+  color: black;
+  font-weight: 900;
+}
+
+.workout__date {
+  position: relative;
+  float: right;
+  bottom: .5em;
+  z-index: 3;
+}

@@ -1,0 +1,29 @@
+.login__form-content {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  margin: auto;
+  border: none;
+  margin-top: 4em;
+}
+
+.login__form-input {
+  margin: 1em 0;
+  height: 2.5em;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+}
+
+.login__form-submit {
+  width: 6em;
+  height: 2em;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.336),-1px -1px 4px rgba(0, 0, 0, 0.336);
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-top: 1em; 
+  margin-bottom: 1em; 
+  font-size: 20px;
+}

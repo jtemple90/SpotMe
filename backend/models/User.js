@@ -1,7 +1,8 @@
+///////////////////REQUIREMENTS////////////////////////////////////////////
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
+//////////////////MODEL SCHEMA////////////////////////////////////////////
 const userSchema = new Schema(
   {
     username: {
@@ -18,34 +19,24 @@ const userSchema = new Schema(
       unique: true,
       minlength: 10
     },
-    goal: {
-      type: String,
-    },
     password: {
       type: String,
       required: true,
       minlength: 6,
     },
-    // image: {
-    //   type: String,
-    // },
-    createdAt: {
-      type: Date,
-      default: Date.now,
+    image: {
+      type: String,
     },
+    // Reference Workout Model As A SubArray Of Objects
     workouts: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Workout",
       }],
-    articles: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Article",
-      }],
-  },
   { timestamps: true });
 
-
-
+// ///////////MONGOOSE MODEL VARIABLE/////////////////////////////////
 const User = mongoose.model("User", userSchema);
 
+
+//////////////////EXPORT MODEL///////////////////////////////////////
 module.exports = User;

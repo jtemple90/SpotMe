@@ -1,0 +1,60 @@
+.newWorkout__form-content {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  margin: auto;
+  border: none;
+  margin-top: 4em;
+  outline: none;
+}
+
+.newWorkout__form-input {
+  margin: auto;
+  margin-top: 1em;
+
+  height: 2.5em;
+  border: none;
+  width: 20em;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+  outline: none;
+}
+
+.newWorkout__form-textArea {
+  margin: auto;
+  margin-top: 2em;
+  width: 20em;
+  display: flex;
+  height: 10em;
+  overflow: scroll;
+  outline: none;
+}
+
+.newWorkout__form-date {
+  margin: auto;
+  display: flex;
+  width: 20em;
+  align-content: center;
+  justify-content: start;
+  margin-top: 2em;
+
+}
+
+.newWorkout__form-datepicker {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+  outline: none;
+}
+
+.newWorkout__form-submit {
+  width: 9em;
+  height: 2em;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.336),-1px -1px 4px rgba(0, 0, 0, 0.336);
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-top: 2em; 
+  font-size: 20px;
+  outline: none;
+}

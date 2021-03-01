@@ -1,8 +1,14 @@
+///////////////////REQUIREMENTS////////////////////////////////////////////
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//////////////////MODEL SCHEMA////////////////////////////////////////////
 const workoutSchema = new Schema(
   {
+    username: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -14,12 +20,9 @@ const workoutSchema = new Schema(
 
     date: {
       type: Date,
-      default: Date.now,
+      default: new Date(),
     },
-    username: {
-      type: String,
-      required: true,
-    },
+    // Reference Exercise Model As A SubArray
     // exercises: [{
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: "Exercise",
@@ -28,6 +31,8 @@ const workoutSchema = new Schema(
   { timestamps: true }
 );
 
+// ///////////MONGOOSE MODEL VARIABLE/////////////////////////////////
 const Workout = mongoose.model("Workout", workoutSchema);
 
+//////////////////EXPORT MODEL///////////////////////////////////////
 module.exports = Workout;
